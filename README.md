@@ -1,7 +1,8 @@
-## Face Hallucination via Split-Attention in Split-Attention Network
+# Face Hallucination via Split-Attention in Split-Attention Network
 
 This repository provides the official PyTorch implementation of the following paper:
-Paper link: https://arxiv.org/pdf/2010.11575v2.pdf
+
+### Paper link: https://arxiv.org/pdf/2010.11575v2.pdf
 ### Requirement
 * Python 3.6
 * PyTorch >= 0.4.1
@@ -10,7 +11,7 @@ Paper link: https://arxiv.org/pdf/2010.11575v2.pdf
 * imageio
 * matplotlib
 * tqdm
-## Code
+### Code
 Clone this repository into any place you want.
 ```
 Coming soon
