@@ -19,7 +19,7 @@ If you find the code helpful in your resarch or work, please cite the following 
 ```
 @article{wang2020face,
   title={Face Hallucination Using Split-Attention in Split-Attention Network},
-  author={Wang, Yuanzhi and Lu, Tao and Wang, Yu and Zhang, Yanduo},
+  author={Wang, Yuanzhi and Lu, Tao and Wang, Yu and Zhang, Yanduo and Liu, Wei and Wang, Zhongyuan},
   journal={arXiv preprint arXiv:2010.11575},
   year={2020}
 }
