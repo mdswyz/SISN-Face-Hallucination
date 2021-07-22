@@ -21,7 +21,7 @@ If you find the code helpful in your resarch or work, please cite the following 
 ```
 @inproceedings{SISN,
   title={Face Hallucination via Split-Attention in Split-Attention Network},
-  author={Lu, Tao and Wang, Yuanzhi and Zhang, Yanduo and Wang, Yu  and Liu, Wei and Wang, Zhongyuan and Jiang, Junjun},
+  author={Lu, Tao and Wang, Yuanzhi and Zhang, Yanduo and Wang, Yu  and Wei, Liu and Wang, Zhongyuan and Jiang, Junjun},
   booktitle={Proceedings of the ACM International Conference on Multimedia (ACM MM)},
   year={2021}
 }
