@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument("--aux_alpha", type=float, default=1.2)
 
     # dataset
-    parser.add_argument("--dataset_root", type=str, default="dataset/1024X1024/Train")
+    parser.add_argument("--dataset_root", type=str, default="dataset/FFHQ/1024X1024")
     parser.add_argument("--dataset", type=str, default="FSR")
     parser.add_argument("--train_val_range", type=str, default="1-850/851-950")
     parser.add_argument("--scale", type=int, default=4)
