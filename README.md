@@ -32,7 +32,7 @@ After download all datasets, the folder ```dataset``` should be like this (take 
 ```
 
 ### Training Model
-First, you need to set the necessary parameters in the option.py such as scale, dataset_root, train_val_range, etc.
+First, you need to set the necessary parameters in the `option.py` such as scale, dataset_root, train_val_range, etc.
 Training the model on the X4 scale as below:
 ```
 python train.py --model SISN --scale 4
