@@ -11,11 +11,40 @@ This repository provides the official PyTorch implementation of the following pa
 * imageio
 * matplotlib
 * tqdm
-### Code
-Clone this repository into any place you want.
+### Dataset
+Please download FFHQ dataset from [here](https://github.com/NVlabs/ffhq-dataset) and CelebA dataset from [here](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html).
+After download all datasets, the folder ```dataset``` should be like this (take FFHQ as an example):
 ```
-Coming soon
+    dataset    
+    └── FFHQ
+        ├── 1024X1024
+            ├── HR
+            └── LR
+                ├── X2
+                ├── X4
+                └── X8
+        └── 256X256
+            ├── HR
+            └── LR
+                ├── X2
+                ├── X4
+                └── X8
 ```
+
+### Training Model
+First, you need to set the necessary parameters in the option.py such as scale, dataset_root, train_val_range, etc.
+Training the model on the X4 scale as below:
+```
+python train.py --model SISN --scale 4
+```
+
+By default, the trained model will be saved in `./pt` directory.
+
+### Testing model
+```
+python test.py --model SISN --scale 4 --pretrain <path_of_pretrained_model> --dataset_root <path_of_input_image> --save_root <path_of_result>
+```
+
 ### Citation
 If you find the code helpful in your resarch or work, please cite the following paper.
 ```
