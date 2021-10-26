@@ -2,7 +2,7 @@
 
 This repository provides the official PyTorch implementation of the following paper:
 
-### Paper link: [Arxiv](https://arxiv.org/abs/2010.11575)
+### Paper link: [SISN-MM'21](https://dl.acm.org/doi/abs/10.1145/3474085.3475682)
 ### Requirement
 * Python 3.7
 * PyTorch >= 1.4.0 (1.5.0 is ok)
