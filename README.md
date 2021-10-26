@@ -1,4 +1,4 @@
-# Face Hallucination via Split-Attention in Split-Attention Network
+# Face Hallucination via Split-Attention in Split-Attention Network (Accepted by ACM MM 2021)
 
 This repository provides the official PyTorch implementation of the following paper:
 
