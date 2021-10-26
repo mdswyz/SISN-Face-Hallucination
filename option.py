@@ -29,7 +29,7 @@ def parse_args():
     parser.add_argument("--patch_size", type=int, default=32)
     parser.add_argument("--batch_size", type=int, default=10)
     parser.add_argument("--max_steps", type=int, default=700000)
-    parser.add_argument("--eval_steps", type=int, default=100)
+    parser.add_argument("--eval_steps", type=int, default=1000)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--gclip", type=int, default=0)
 
