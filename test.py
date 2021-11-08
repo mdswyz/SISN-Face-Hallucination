@@ -38,7 +38,7 @@ def main(opt):
 
         epoch = 1
         flag = 1
-        SR = net(LR, epoch, flag).detach()
+        SR = net(LR).detach()
         SR = SR[0].clamp(0, 255).round().cpu().byte().permute(1, 2, 0).numpy()
 
         save_path = os.path.join(opt.save_root, name)
