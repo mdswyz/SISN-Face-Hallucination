@@ -7,14 +7,15 @@ import torch.nn.functional as F
 import utils
 import augments
 from data import generate_loader
-
+from torch.nn.parallel import DistributedDataParallel as DDP
 class Solver():
-    def __init__(self, module, opt):
+    def __init__(self, module, opt, rank):
         self.opt = opt
-
+        self.rank = rank
 
         self.dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.net = nn.DataParallel(module.Net(opt)).to(self.dev)
+        #self.net = nn.DataParallel(module.Net(opt)).to(self.dev)
+        self.net = DDP(module.Net(opt), device_ids=[rank], output_device=rank, find_unused_parameters=True)
         print("# params:", sum(map(lambda x: x.numel(), self.net.parameters())))
 
         if opt.pretrain:
@@ -91,8 +92,8 @@ class Solver():
 
         curr_lr = self.scheduler.get_last_lr()[0]
         eta = (self.t2-self.t1) * ((max_steps-step)//1000) / 3600
-        print("[{}/{}] {:.2f} (Best: {:.2f} @ {} step) LR: {}, ETA: {:.1f} hours"
-            .format(step, max_steps, psnr, self.best_psnr, self.best_step,
+        print("RANK: {} [{}/{}] {:.2f} (Best: {:.2f} @ {} step) LR: {}, ETA: {:.1f} hours"
+            .format(self.rank, step, max_steps, psnr, self.best_psnr, self.best_step,
              curr_lr, eta))
 
         self.t1 = time.time()

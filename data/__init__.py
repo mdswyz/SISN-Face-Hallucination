@@ -5,21 +5,32 @@ import skimage.color as color
 import torch
 import utils
 
-def generate_loader(phase, opt):
+def generate_loader(phase, opt, rank):
     cname = opt.dataset.replace("_", "")
     if "FSR" in opt.dataset:
         mname = importlib.import_module("data.FSR")
     else:
         raise ValueError("Unsupported dataset: {}".format(opt.dataset))
 
+
+    dataset = getattr(mname, cname)(phase, opt)
+    sampler = torch.utils.data.distributed.DistributedSampler(
+        dataset,
+        num_replicas=opt.num_gpu,
+        rank=rank,
+        shuffle=False,
+        drop_last=False
+    )
     kwargs = {
         "batch_size": opt.batch_size if phase == "train" else 1,
         "num_workers": opt.num_workers if phase == "train" else 0,
         "shuffle": phase == "train",
         "drop_last": phase == "train",
+        "drop_last": False,
+        "shuffle": False,
+        "sampler": sampler
     }
 
-    dataset = getattr(mname, cname)(phase, opt)
     return torch.utils.data.DataLoader(dataset, **kwargs)
 
 

@@ -38,6 +38,9 @@ def parse_args():
     parser.add_argument("--save_result", action="store_true")
     parser.add_argument("--ckpt_root", type=str, default="./pt")
     parser.add_argument("--save_root", type=str, default="./output")
+    
+    # number of gpu
+    parser.add_argument("--num_gpu", type=int, default=2)
 
     return parser.parse_args()
 
@@ -49,7 +52,7 @@ def make_template(opt):
     opt.num_channels = 64
     opt.reduction = 16
     opt.res_scale = 1.0
-    opt.max_steps = 1000000
+    opt.max_steps = 1000
     opt.decay = "50-100-150-200-250-300-350-400"
     opt.gclip = 0.5 if opt.pretrain else opt.gclip
 
